@@ -16,7 +16,7 @@ export default async function GridItem({ id }: gridItemProps) {
     const gridItem = fetch[0]
 
         return (
-        <div key={id} className='flex flex-wrap shadow rounded-md'>
+        <div key={id} className=' flex-wrap shadow rounded-md grid grid-cols-1 md:grid-cols-3'>
             <div className="rounded-full overflow-hidden w-10 h-10">
                 <img className="object-cover object-center w-10 h-10" src={gridItem?.imageUrl ?? "undefined"}  alt="" />
             </div>
