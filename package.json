@@ -6,14 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migration:generate": "drizzle-kit generate:pg",
+    "db:push": "drizzle-kit push:pg"
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.6.0",
     "dotenv": "^16.3.1",
-    "drizzle-kit": "^0.19.13",
+    "dotenv-extended": "^2.9.0",
     "drizzle-orm": "^0.28.6",
     "next": "latest",
+    "pnpx": "^0.0.1",
     "react": "latest",
     "react-dom": "latest",
     "tailwind-merge": "^1.14.0"
@@ -23,6 +26,7 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
+    "drizzle-kit": "^0.19.13",
     "eslint": "latest",
     "eslint-config-next": "latest",
     "pg": "^8.11.3",
