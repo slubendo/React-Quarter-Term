@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={twMerge(inter.className, "dark:bg-black dark:text-white bg-white text-black")}>
+        <h1>Full Stack Finds</h1>
         {children}
       </body>
     </html>
