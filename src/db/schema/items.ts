@@ -8,7 +8,7 @@ import {
   pgEnum,
 } from "drizzle-orm/pg-core";
 
-export const categories = pgEnum("categories", [
+export const categoryValues =  [
   "food",
   "games",
   "fitness",
@@ -20,7 +20,9 @@ export const categories = pgEnum("categories", [
   "appliances",
   "automotive",
   "toys",
-]);
+] as const 
+export type Category = typeof categoryValues[number]
+export const categories = pgEnum("categories",categoryValues);
 
 export const items = pgTable("items", {
   id: serial("id").primaryKey(),

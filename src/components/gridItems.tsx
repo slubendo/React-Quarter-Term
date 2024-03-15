@@ -3,34 +3,20 @@ import Link from "next/link"
 import Image from "next/image"
 import GridItem from "./gridItem"
 import { db } from "@/db/index"
-import { items } from "@/db/schema/items"
+import { items, Category, categoryValues } from "@/db/schema/items"
 import { eq, lt, gte, ne } from "drizzle-orm";
 import { categories } from "@/db/schema/items"
 
 interface gridItemsProps {
-    searchParams: string;
+    searchParams: Category;
 }
 
 
-export default async function GridItems({ searchParams }: gridItemsProps) {
+export default async function GridItems({ searchParams }: gridItemsProps) { 
     let gridItems;
-    const test = [
-        "food",
-        "games",
-        "fitness",
-        "stationery",
-        "fashion",
-        "novelty",
-        "home decor",
-        "kitchenware",
-        "appliances",
-        "automotive",
-        "toys",
-      ] as const
-      const result = test.find( a => a === searchParams)
-    if (result) {
-        
-        gridItems = await db.select().from(items).where(eq(items.category, result));
+
+    if (categoryValues.includes(searchParams)) {
+        gridItems = await db.select().from(items).where(eq(items.category, searchParams));
     } else {
         gridItems = await db.select().from(items);
     }

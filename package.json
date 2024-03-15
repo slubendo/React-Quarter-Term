@@ -8,6 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "migration:generate": "drizzle-kit generate:pg",
+    "drizzle:generate": "drizzle-kit generate:pg",
+    "drizzle:push": "drizzle-kit push:pg",
+    "drizzle:seed": "node --loader ts-node/esm ./seed.ts",
     "db:push": "drizzle-kit push:pg"
   },
   "dependencies": {
